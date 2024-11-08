@@ -188,6 +188,12 @@ Mean: 514137424.93907565
 Median: 290530915.0
 Standard Deviation: 566856949.0388832
 ```
+
+In the resulting values of mean and median, it can be observed that their values are far apart. In the context of the number of streams, the observed differences between the mean and median values suggests a skewed distribution of streams. This sometimes occurs when few tracks receive an exceptionally high number of streams, pulling the mean higher, while those tracks that receive relatively lower streams remain in the middle value, thus the median. 
+
+It is also noticeable that the value of the standard deviation is also large, which signifies a more spread out data around the mean. This indicates that the tracks vary widely in popularity.
+
+
 ### B. Distribution of Released Year and Artist Count
 Similar to how the was treated in the previous section, the columns in this section will also be converted to numeric.
 ```python
