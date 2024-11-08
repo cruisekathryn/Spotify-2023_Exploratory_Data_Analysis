@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a6d3ebe0-a6f5-4d3d-9700-50b0e80008ff" alt="Header"/>
+</p>  
+
+
 # **Exploratory Data Analysis on Spotify 2023 Dataset**
 
 ## **Introduction**
@@ -7,6 +12,10 @@ In this project, we will delve deeper into the Exploratory Data Analysis perform
 > "This dataset contains a comprehensive list of the most famous songs of 2023 as listed on Spotify. The dataset offers a wealth of features beyond what is typically available in similar datasets. It provides insights into each song's attributes, popularity, and presence on various music platforms. The dataset includes information such as **track name, artist(s) name, release date, Spotify playlists and charts, streaming statistics, Apple Music presence, Deezer presence, Shazam charts, and various audio features.**"
 
 The objective of this analysis is to **analyze, visualize, and interpret the data** to extract meaningful insights.  <br />
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/142bd120-b31a-4992-97e4-ee5a838e8df4" alt="Music Notes"/>
+</p>  
 
 ## Most Streamed Spotify Songs 2023 Dataset Overview
 This section presents the overview of the **Most Streamed Spotify Songs 2023 Dataset Overview** including the number of rows and columns that the dataset contains. The data type of each column is also stated in this section. Moreovr, existence of missing values are also checked.  
@@ -157,6 +166,10 @@ For better viewing, you may view it in the summarized table below.
 | 21 | instrumentalness_%   | 953 non-null   |  0  | int64 |
 | 22 | liveness_%           | 953 non-null   |  0  | int64 |
 | 23 | speechiness_%        | 953 non-null   | 0  |  int64 |
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/142bd120-b31a-4992-97e4-ee5a838e8df4" alt="Music Notes"/>
+</p>  
 
 ## Basic Descriptive Statistics
 This section provides the basic descriptive statistics of the Spotify Dataset. First the mean, median, and standard deviation of the 'streams' column were calculated in order to gain an understanding on the central tendency of the data. The distribution of the 'released_year' and 'artist_count' columns were also examined to identify trends and patterns within the dataset.
