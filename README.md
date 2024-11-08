@@ -2,7 +2,6 @@
   <img src="https://github.com/user-attachments/assets/a6d3ebe0-a6f5-4d3d-9700-50b0e80008ff" alt="Header"/>
 </p>  
 
-
 # **Exploratory Data Analysis on Spotify 2023 Dataset**
 
 ## **Introduction**
@@ -14,12 +13,14 @@ In this project, we will delve deeper into the Exploratory Data Analysis perform
 The objective of this analysis is to **analyze, visualize, and interpret the data** to extract meaningful insights.  <br />
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/142bd120-b31a-4992-97e4-ee5a838e8df4" alt="Music Notes"/>
+  <img src="https://github.com/user-attachments/assets/01321be0-dcfa-40dc-90c4-c7034e978c7b" alt="Music Notes"/>
 </p>  
 
+
 ## Most Streamed Spotify Songs 2023 Dataset Overview
-This section presents the overview of the **Most Streamed Spotify Songs 2023 Dataset Overview** including the number of rows and columns that the dataset contains. The data type of each column is also stated in this section. Moreovr, existence of missing values are also checked.  
-### A. Importing Libraries and Accessing .csv File
+This part presents the overview of the **Most Streamed Spotify Songs 2023 Dataset Overview** including the number of rows and columns that the dataset contains. The data type of each column is also stated in this part. Moreovr, existence of missing values are also checked.  
+
+### <ins>A. Importing Libraries and Accessing .csv File</ins>
 To start, we import the necessary libraries in manipulating the data and adding visualizations.
 ```python
 import numpy as np
@@ -47,7 +48,7 @@ pd.set_option('display.max_columns', None)
   <img src="https://github.com/user-attachments/assets/ca9ccd41-463d-465f-8c7a-e1d21f6afc24" alt="Spotify 2023 Complete Dataset"/>
 </p>  
 
-### C. Number of Rows and Columns
+### <ins>B. Number of Rows and Columns</ins>
 The number of rows and columns may be identified by using the `.shape` function.
 ```python
 rows, columns = spotify_data.shape
@@ -59,7 +60,7 @@ The output for this code block is as follows:
 Number of rows: 953
 Number of columns: 24
 ```
-### D. Checking of Data Type and Missing Values
+### <ins>C. Checking of Data Type and Missing Values</ins>
 To properly analyze the dataset, verifying the data types and checking of missing values will be essential.
 ```python
 print('Overview of the Spotify Data Information:\n')
@@ -168,13 +169,13 @@ For better viewing, you may view it in the summarized table below.
 | 23 | speechiness_%        | 953 non-null   | 0  |  int64 |
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/142bd120-b31a-4992-97e4-ee5a838e8df4" alt="Music Notes"/>
-</p>  
+  <img src="https://github.com/user-attachments/assets/47c1f2d6-f32e-4ae9-9616-779921c510f3" alt="Music Notes"/>
+</p> 
 
 ## Basic Descriptive Statistics
-This section provides the basic descriptive statistics of the Spotify Dataset. First the mean, median, and standard deviation of the 'streams' column were calculated in order to gain an understanding on the central tendency of the data. The distribution of the 'released_year' and 'artist_count' columns were also examined to identify trends and patterns within the dataset.
+This part provides the basic descriptive statistics of the Spotify Dataset. First, the mean, median, and standard deviation of the 'streams' column were calculated in order to gain an understanding on the central tendency of the data. The distribution of the 'released_year' and 'artist_count' columns were also examined to identify trends and patterns within the dataset.
 
-### A. Mean, Median, and Standard Deviation of the Streams
+### <ins>A. Mean, Median, and Standard Deviation of the Streams</ins>
 Before calculating the mean, median, and standard deviation, it is crucial to clean the data to avoid inaccuracies in the values. To do so, the 'streams' column shall be converted to numeric.
 ```python
 # Convert 'streams' column to numeric
@@ -202,13 +203,8 @@ Median: 290530915.0
 Standard Deviation: 566856949.0388832
 ```
 
-In the resulting values of mean and median, it can be observed that their values are far apart. In the context of the number of streams, the observed differences between the mean and median values suggests a skewed distribution of streams. This sometimes occurs when few tracks receive an exceptionally high number of streams, pulling the mean higher, while those tracks that receive relatively lower streams remain in the middle value, thus the median. 
-
-It is also noticeable that the value of the standard deviation is also large, which signifies a more spread out data around the mean. This indicates that the tracks vary widely in popularity.
-
-
-### B. Distribution of Released Year and Artist Count
-Similar to how the was treated in the previous section, the columns in this section will also be converted to numeric.
+### <ins>B. Distribution of Released Year and Artist Count<ins>
+Similar to how the was treated in the previous part, the columns in this section will also be converted to numeric.
 ```python
 # Convert 'artist_count' and 'released_year' columns to numeric
 for column in ['artist_count', 'released_year']:
@@ -245,7 +241,69 @@ plt.show()
   <img src="https://github.com/user-attachments/assets/2350414b-c321-46e5-8ada-472b52812272" alt="Number of Tracks Released per Month"/>
 </p>  
 
+### _**Interpretation**_
 
+In the resulting values of mean and median, it can be observed that differences between the mean and median values suggests a skewed distribution of streams. This sometimes occurs when few tracks receive an exceptionally high number of streams, pulling the mean higher, while those tracks that receive relatively lower streams remain in the middle value, thus the median. It is also noticeable that the value of the standard deviation is also large, which signifies a more spread out data around the mean. This indicates that the tracks vary widely in popularity.
+
+The histogram of 'Distribution of Release Year' shows a large increase in tracks starting the year 2020. This suggests that there was a significant concentration of tracks releases in the 2020s while the earlier years have low frequencies potentially due to smaller audiences and less platforms.
+
+Furthermore, the histogram of 'Distribution of Artist Count' shows that majority of th tracks released involve single artists. A significant amount of track releases can also be seen around two and three artists. Meanwhile, for tracks with four to eight artists, the frequency is very low. This distribution highlights a trend towards solo artist and small groups and less tracks on bigger groups.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/47c1f2d6-f32e-4ae9-9616-779921c510f3" alt="Music Notes"/>
+</p>
+
+## Top Performers
+
+This part presents the top performers in the dataset. First, tracks with the highest number of streams were examined. Then, the top five most frequent artists are identified based on their respective number of tracks in th dataset. These insights will be helpful in understanding musical preferences.
+
+### <ins>5 Most Streamed Tracks</ins>
+Sorting will be necessary in this given scenario. Using the function `.sort_value()`, the spotify tracks will be sorted according to desired order. In this case, the dataset should be in a descending order.
+```python
+# Sort the spotify data from highest to lowest
+sorted_tracks = spotify_data.sort_values(by='streams', ascending=False)
+
+# Display the top 5 most streamed tracks
+top_5_tracks = sorted_tracks.head()
+top_5_tracks.loc[:,['track_name','artist(s)_name','streams']]
+```
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e1ac4385-e94a-4808-afb2-636b45c5737b" alt="5 Most Streamed Tracks"/>
+</p>  
+
+### <ins>5 Most Frequent Artists Based on Tracks Count</ins>
+The dataset contains solo artists and multiple artists. To count all tracks, it is necessary to separate the multiple artists into solo artists before counting and sorting the track count. `.str` and `.split()` are simultaneously used to perform the separation process. Other functions used include `.explode()`, `.value_counts()`, and `.head()`.
+```python
+# Split artist(s)_name into lists of artists for tracks with multiple artists
+artist_data = spotify_data['artist(s)_name'].str.split(', ')
+
+# Explode the lists into separate rows
+exploded_data = artist_data.explode().value_counts().head()
+
+# Convert the Series to a DataFrame
+top_5_artists = exploded_data.reset_index()
+top_5_artists.columns = ['Artist', 'Track Count']
+
+top_5_artists
+```
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1400648f-c6a6-4175-ba7d-7c04829f3837" alt="5 Most Frequent Artists"/>
+</p>  
+
+### _**Interpretation**_  
+The data suggests that there is little to no relationship between the most streamed tracks and the most frequent artists, except for The Weeknd. It shows that the number of tracks does not guarante a spot in the top streams. Nevertheless, 'Blinding Lights' by The Weeknd ranks first in the most streamed track, and Bad Bunny leads in the most frequent artists based on tracks with his 40 track releases.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/47c1f2d6-f32e-4ae9-9616-779921c510f3" alt="Music Notes"/>
+</p> 
+
+
+## Temporal Trends
+
+
+Examining the temporal trends in music releases can reveal patterns in the industry over time. By analyzing the number of tracks released each year, we can identify growth trends and see if any particular periods stand out. Additionally, observing the number of releases per month may highlight seasonal patterns, such as specific months when more tracks are released. This analysis can help uncover whether certain times of the year consistently see higher activity in music releases.
 
 ## Summary of Essential Functions used in this Project
 | Functions | Description |
