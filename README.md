@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a6d3ebe0-a6f5-4d3d-9700-50b0e80008ff" alt="Header"/>
+  <img src="https://github.com/user-attachments/assets/67071fb9-7a8b-4db7-98f0-2a311099d5b3" alt="Header"/>
 </p>  
 
 # **Exploratory Data Analysis on Most Streamed Spotify Songs 2023 Dataset**
